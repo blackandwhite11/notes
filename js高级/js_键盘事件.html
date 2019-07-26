@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		
+		window.onload = function(){
+			// 键盘事件
+			// 键盘被按下 onkeydown   按下一直不放，会一直触发
+			// 键盘松开 onkeyup
+			// 键盘事件一般绑定到可以获取焦点的元素或document上
+
+			// 判断Ctrl shift Alt按键，event.ctrlKey  event.altKey  event.shiftKey == true;
+
+			// 可以通过event.keyCode 来获取Unicode编码
+
+			// var ipt = document.getElementById('ipt');
+
+			// ipt.onkeydown = function(event){
+			// 	event = event || window.event;
+			// 	// console.log('按下');
+			// 	console.log('an-xia' + event.keyCode);
+
+			// }
+			// ipt.onkeyup = function(event){
+			// 	event = event || window.event;
+			// 	// console.log('shongkai');
+			// 	console.log('shong-kai' + event.keyCode);
+			// }
+
+			// 判断Ctrl + F 是否按下  F 70  Ctrl 17
+			// document.onkeydown = function(event){
+			// 	event = event || window.event;
+			// 	console.log(event.keyCode);
+			// 	// if(event.ctrlKey && event.keyCode == 70){
+			// 	// 	console.log('同时按下');
+			// 	// }	
+			// }
+
+			// 第二种方法
+			// var keys = {ctrl: false, f: false};
+			// document.onkeydown = function(event){
+			// 	event = event ||window.event;
+			// 	// console.log('按下');
+			// 	if(event.keyCode == 70){
+			// 		keys.f = true;
+			// 	}else if(event.keyCode == 17){
+			// 		keys.ctrl = true;
+			// 	}
+			// 	if(keys.f && keys.ctrl){
+			// 		console.log('同时按下');
+			// 	}
+			// 	return false;
+			// };
+			// document.onkeyup = function(event){
+			// 	event = event ||window.event;
+			// 	if(event.keyCode == 70){
+			// 		keys.f = false;
+			// 	}else if(event.keyCode == 17){
+			// 		keys.ctrl = false;
+			// 	}
+			// };
+
+
+		};
+
+	</script>
+</head>
+<body>
+	<input type="text" name="" id="ipt">
+
+
+</body>
+</html>

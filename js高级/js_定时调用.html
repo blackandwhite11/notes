@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// 定时调用
+		// var timer = setInterval(fun, time)  fun每隔time毫秒执行一次
+		// clearInterval(timer) // 关闭定时器， 可以接收任意参数
+
+
+		window.onload = function(){
+			var con = document.getElementById('con');
+
+			var con_height = con.clientHeight;
+
+			var timer = setInterval(function(){
+				con.style.height = con_height + 10 + 'px';
+				console.log(con.style.height);
+				con_height = parseInt(con.style.height);
+
+				if(con.style.height >= '200px'){
+					clearInterval(timer);
+				}
+			}, 1000);
+
+
+		};
+	</script>
+
+</head>
+<style type="text/css">
+	#con {
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+	}
+</style>
+<body>
+	<div id="con"></div>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>显示坐标</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var con = document.getElementById("div1");
+			var display = document.getElementById("display");
+
+			// 事件对象：
+			// 当事件的响应函数被触发时，浏览器都会将一个事件对象作为实参传进响应函数，该事件对象封装了当前事件的一切信息
+			// event = event || window.event;  为解决兼容性问题
+			con.onmousemove = function(event){
+				// 鼠标移动事件
+
+				event = event || window.event;
+				// alert(event);
+				var x = event.clientX - con.offsetLeft;
+				var y = event.clientY - con.offsetTop;
+
+				display.innerHTML = x + "px" + y + "px";
+
+
+			};
+
+
+		};
+	</script>
+	<style type="text/css">
+		.con {
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+		
+		.display {
+			width: 200px;
+			height: 30px;
+			border: 1px solid #000;
+			margin-top: 10px;
+		}
+
+
+	</style>
+</head>
+<body style="height:2000px">
+	<div class="con" id="div1"></div>
+	<div class="display" id="display"></div>
+
+</body>
+</html>

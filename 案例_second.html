@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<style type="text/css">
+		/* 初始化start */
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			font-weight: normal;
+		}
+		ul {
+			list-style: none;
+		}
+		a {
+			text-decoration: none;
+		}
+		input {
+			border: 0;
+		}
+		.clearfix:after,.clearfix:before {
+			content: "";
+			display: table;
+		}
+		.clearfix:after {
+			clear: both;
+		}
+		.clearfix {
+			*zoom: 1;
+		}
+
+		/*头部*/
+		body {
+			background: #f2f4f6;
+		}
+		.head_con {
+			height: 100px;
+			overflow: hidden;
+		}
+		.h_con {
+			width: 1366px;
+			height: 44px;
+			margin: 30px auto 0;	
+		}
+		.logo {
+			/*width: 198px;
+			height: 44px;*/
+			float: left;
+		}
+		.bannar {
+			margin-left: 70px;
+			float: left;
+		}
+		.bannar li {
+			float: left;
+		}
+		.bannar li a {
+			height: 44px;
+			padding: 0 8px 0;
+			display: block;
+			/*line-height: 44px;*/
+			color: #000;
+			margin-right: 20px;
+			font: 16px/44px "microsoft yahei";	
+		}
+		.bannar li a:hover {
+			border-bottom: 2px solid #00a4ff;
+		}
+		/*search start*/
+		.search {
+			width: 410px;
+			height: 38px;
+			border: 1px solid #00a4ff;
+			float: right;
+		}
+		.search input[type=text] {
+			float: left;
+			width: 365px;
+			height: 38px;
+			padding-left: 16px;
+			box-sizing: border-box;
+		}
+		.search input[type=submit] {
+			float: left;
+			width: 45px;
+			height: 38px;
+			background: url(案例_学信网/images/search_06.png) no-repeat center center #00a4ff;
+		}
+
+		.person {
+			float: right;
+			margin-left: 30px;
+		}
+		.person li {
+			float: left;
+		}
+		.person li a {
+			line-height: 48px;
+			color: #666;
+			margin-right: 25px;
+			display: block;
+		}
+		.user_img {
+			padding-left: 35px;
+			background: url(案例_学信网/images/header_person.png) no-repeat 0 center;
+		}
+
+
+
+
+
+
+
+	</style>
+
+</head>
+<body>
+	<div class="head_con">
+		<div class="h_con">
+			<!-- logo -->
+			<div class="logo">
+				<img src="案例_学信网/images/logo_03.png" alt="">
+			</div>
+			<!-- 小bannar -->
+			<div class="bannar">
+				<ul>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">课程</a></li>
+					<li><a href="#">职业规划</a></li>
+				</ul>
+			</div>
+			
+			<!-- 个人中心 -->
+			<div class="person">
+				<ul>
+					<li><a href="#">个人中心</a></li>
+					<li><a href="#"><img src="案例_学信网/images/ling_06.png"></a></li>
+					<li><a href="#" class="user_img">用户名</a></li>
+					
+				</ul>
+			</div>
+			<!-- search -->
+			<div class="search">
+				<input type="text" placeholder="请输入关键字">
+				<input type="submit" value="">
+			</div>
+			
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var y_n_checkbox = document.getElementById('y-n');
+			var hobby_checkboxs = document.getElementsByName('hobby');
+			var btn1 = document.getElementById('btn1');
+			var btn2 = document.getElementById('btn2');
+			var btn3 = document.getElementById('btn3');
+
+			for(var i = 0;i < hobby_checkboxs.length;i++){
+				//为每个 选项checkbox 绑定onclick
+				hobby_checkboxs[i].onclick = function(){
+					if(!this.checked){
+						this.checked = false;
+					}
+					else{
+						this.checked = true;
+					}
+					for (var i = 0; i < hobby_checkboxs.length; i++) {
+						// 检查是否每个都是选择状态
+						if(!hobby_checkboxs[i].checked){
+							y_n_checkbox.checked = false;
+							break;
+						}
+						else{
+							y_n_checkbox.checked = true;
+						}
+					}
+				}
+			}
+
+			y_n_checkbox.onclick = function(){
+				//alert(y_n_checkbox.checked);
+				if(y_n_checkbox.checked){
+					for(var i = 0;i<hobby_checkboxs.length;i++){
+						hobby_checkboxs[i].checked = true;
+					}
+				}
+				else{
+					for (var i = 0; i < hobby_checkboxs.length; i++) {
+						hobby_checkboxs[i].checked = false;
+					}
+				}	
+			};
+			btn1.onclick = function(){
+				for(var i = 0;i<hobby_checkboxs.length;i++){
+					hobby_checkboxs[i].checked = true;
+				}
+				if(!y_n_checkbox.checked){
+					y_n_checkbox.checked = true;
+				}
+			}
+			btn2.onclick = function(){
+				for(var i = 0;i<hobby_checkboxs.length;i++){
+					hobby_checkboxs[i].checked = false;
+				}
+				if(y_n_checkbox.checked){
+					y_n_checkbox.checked = false;
+				}
+			}
+			btn3.onclick = function(){
+				for(var i = 0;i<hobby_checkboxs.length;i++){
+					if(hobby_checkboxs[i].checked){
+						hobby_checkboxs[i].checked = false;
+					}
+					else{
+						hobby_checkboxs[i].checked = true;
+					}
+				}
+				for (var i = 0; i < hobby_checkboxs.length; i++) {
+					if(!hobby_checkboxs[i].checked){
+						y_n_checkbox.checked = false;
+						break;
+					}
+				}
+			}
+		};
+	</script>
+
+</head>
+<body>
+	<p style="display: inline-block;" >你有什么爱好?</p>  <label><input type="checkbox" name="" id="y-n">全选/全不选</label> 
+	<br />
+	<label><input type="checkbox" name="hobby">篮球</label>
+	<label><input type="checkbox" name="hobby">足球</label>
+	<label><input type="checkbox" name="hobby">乒乓球</label>
+	<label><input type="checkbox" name="hobby">排球</label>
+	<br />
+	<input type="button" name="" value="全选" id="btn1">
+	<input type="button" name="" value="全不选" id="btn2">
+	<input type="button" name="" value="反选" id="btn3">
+	<input type="button" name="" value="submit">
+
+
+</body>
+</html>

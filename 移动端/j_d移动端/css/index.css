@@ -1,0 +1,277 @@
+body {
+    background-color: #f5f5f5;
+}
+/* 版心 */
+.jd_container {
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    margin: 0 auto;
+}
+/* jd_search  */
+.jd_search {
+    /* 基准是浏览器的宽度 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.jd_search .jd_search_box {
+    width: 100%;
+    max-width: 640px;
+    min-width: 320px;
+    height: 40px;
+    margin: 0 auto;
+    /* background-color: #d8505c;  */
+    background: rgba(216,80,92,0);
+    position: relative;
+}
+.jd_search .jd_search_box .icon_logo {
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 60px;
+    height: 37px;
+    background: url(../images/sprites.png) no-repeat 0 -103px;
+    background-size: 200px 200px;     /* 压缩精灵图  2倍图  */
+}
+.jd_search .jd_search_box form {
+    width: 100%;
+    padding-left: 65px;
+    padding-right: 50px;
+}
+.jd_search .jd_search_box form .icon_search {
+    position: absolute;
+    top: 10px;
+    left: 70px;
+    width: 20px;
+    height: 20px;
+    background-position: -60px -109px;
+}
+.jd_search .jd_search_box form input {
+    width: 100%;
+    height: 30px;
+    margin-top: 5px;
+    border-radius: 15px;
+    padding-left: 30px;
+}
+.jd_search .jd_search_box .login {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+}
+
+/* 轮番图 */
+.jd_banner {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.jd_banner ul:first-child{
+    width: 1000%;
+    transform: translateX(-10%);
+    -webkit-transform: translateX(-10%);
+}
+.jd_banner ul:first-child li{
+    width: 10%;
+    float: left;
+}
+.jd_banner ul:first-child li a{
+    width: 100%;
+}
+.jd_banner ul:first-child li a img{
+    width: 100%;
+    display: block;
+}
+.jd_banner ul:last-child{
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    margin-left: -37px;
+}
+.jd_banner ul:last-child li{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 4px;
+    background-color: #fff;
+    float: left;
+}
+.jd_banner ul:last-child li:last-child {
+    margin-right: 0px;
+}
+.jd_banner ul:last-child li.now{
+    background-color: blue;
+}
+
+/* 菜单栏 */
+.jd_nav {
+    width: 100%;
+    background-color: #fff;
+}
+.jd_nav ul{
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.jd_nav ul li{
+    width: 25%;
+    float: left;
+    margin-bottom: 4px;
+}
+.jd_nav ul a{
+    width: 100%;
+}
+.jd_nav ul a img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+}
+.jd_nav ul a p{
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    margin-top: 2px;
+}
+
+/* 商品区 */
+.jd_product {
+    width: 100%;
+    padding: 0 5px;
+}
+
+.jd_product .jd_probox {
+    background-color: #fff;
+    margin-top: 10px;
+    box-shadow: 0 0 1px #d8d8d8;
+
+    min-height: 200px;
+}
+.jd_product .jd_probox .pro_title{
+    height: 34px;
+    border-bottom: 1px solid #ccc;
+    line-height: 34px;
+}
+.jd_product .jd_probox .pro_title h3 {
+    font-size: 16px;
+    color: #d8505c;
+    font-weight: normal;
+    position: relative;
+    text-indent: 20px;
+}
+.jd_product .jd_probox .pro_title h3::before {
+    content: "";
+    width: 3px;
+    height: 12px;
+    background-color: #000;
+    position: absolute;
+    top: 12px;
+    left: 10px;
+}
+.jd_product .jd_probox .pro_title.no_border {
+    border-bottom: 0;
+}
+/* 秒杀 */
+.ms_icon {
+    float: left;
+    width: 16px;
+    height: 20px;
+    background: url(../images/seckill-icon.png) no-repeat;
+    background-size: 16px 20px;
+    margin-top: 5px;
+}
+.ms_text {
+    float: left;
+    color: #d8505c;
+    font-size: 16px;
+    margin-left: 10px;
+
+}
+.ms_time {
+    float: left;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+.ms_time span {
+    float: left;
+    width: 14px;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+    background-color: #000;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 3px;
+}
+.ms_time span:nth-child(3n){
+    color: #000;
+    background-color: #fff;
+}
+.ms_most {
+    font-size: 14px;
+    color: #666;
+}
+/* 秒杀商品 */
+.ms_product {
+    width: 100%;
+    padding: 10px 0;
+}
+.ms_product li {
+    width: 33.333%;
+    float: left;
+}
+.ms_product li:last-child a {
+    border-right: 0;
+}
+.ms_product li a {
+    display: block;
+    width: 100%;
+    border-right: 1px solid #666;
+    margin-bottom: 5px;
+}
+.ms_product li a img {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+}
+.ms_product li p {
+    font-size: 14px;
+    text-align: center;
+}
+.ms_product li .now_price {
+    color: #d8505c;
+}
+.ms_product li .old_price {
+    color: #666;
+    text-decoration: line-through;
+}
+
+/* 组合样式 */
+.width_p50 {
+    width: 50%;
+}
+.width_p50 img {
+    width: 100%;
+    display: block;
+}
+.left_border {
+    border-left: 1px solid #ddd;
+}
+.right_border {
+    border-right: 1px solid #ddd;
+}
+.bottom_border {
+    border-bottom: 1px solid #ddd;
+}
+
+   
+
+
+

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>添加删除information</title>
+	<script type="text/javascript">
+
+		function Remove(tr_lis){
+			for(var i=0;i<tr_lis.length;i++){
+				// 为tr 添加删除
+				tr_lis[i].onclick = function(){
+					var tr = this.parentNode.parentNode
+					var ret = confirm('是否真的删除?');
+					if(ret){
+						tr.parentNode.removeChild(tr);
+					}
+					return false;
+				}
+			}
+			//移除tr标签
+			
+		}
+		window.onload = function() {
+			var table = document.getElementById('infor-table');
+			var a_lis = table.getElementsByTagName('a');
+			//为tr绑定onclick 删除
+			Remove(a_lis);
+			
+			//添加新员工
+			var name_input = document.getElementById('name-input');
+			var email_input = document.getElementById('email-input');
+			var salary_input = document.getElementById('salary-input');
+
+			var submit_button = document.getElementById('submit-button');
+			submit_button.onclick = function(){
+				var name = name_input.value;
+				var email = email_input.value;
+				var salary = salary_input.value;
+				//
+				var tr = document.createElement('tr');
+				tr.innerHTML =	"<td>"+name+"</td><td>"+email+"</td><td>"+salary+"</td><td><a href='#'>Delete</a></td>";
+				table.appendChild(tr);
+
+				// //依次添加
+				// var td1 = document.createElement('td');
+				// var td2 = document.createElement('td');
+				// var td3 = document.createElement('td');
+				// var td4 = document.createElement('td');
+
+				// td1.appendChild(document.createTextNode(name));
+				// td2.appendChild(document.createTextNode(email));
+				// td3.appendChild(document.createTextNode(salary));
+				// var a = document.createElement('a');
+				// a.href = '#';
+				// a.appendChild(document.createTextNode('Delete'));
+				// td4.appendChild(a);
+
+				// tr.appendChild(td1);
+				// tr.appendChild(td2);
+				// tr.appendChild(td3);
+				// tr.appendChild(td4);
+
+				// table.appendChild(tr);
+
+
+				// //获取新标签下的a ，为其绑定onclick事件
+				// a_lis = table.getElementsByTagName('a');
+				// //tr_lis = table.getElementsByTagName('tr');
+				// Remove(a_lis);
+
+
+				直接为创建的tr td a 绑定onclick
+				var c_a = tr.lastElementChild.firstElementChild;
+				c_a.onclick = function(){
+						var tr = this.parentNode.parentNode
+						var ret = confirm('是否真的删除?');
+						if(ret){
+							tr.parentNode.removeChild(tr);
+						}
+						return false;
+					}
+
+			};
+			
+
+
+
+
+		};
+	</script>
+	<style type="text/css">
+		a {
+			text-decoration: none;
+		}
+		.big-con {
+			width: 400px;
+			margin: 0 auto;
+		}
+		.con {
+			width: 294px;
+			height: 180px;
+			border: 1px solid #000;
+			margin-top: 20px;
+			padding-left: 10px;
+		}
+		#submit-button {
+			width: 60px;
+			margin-left: 110px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="big-con">
+		<table id="infor-table" border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Salary</th>
+			</tr>
+			<tr>
+				<td>Tom</td>
+				<td>tom@tom.com</td>
+				<td>5000</td>
+				<td><a href="#">Delete</a></td>
+			</tr>
+			<tr>
+				<td>Marry</td>
+				<td>marry@mary.com</td>
+				<td>8000</td>
+				<td><a href="#">Delete</a></td>
+			</tr>
+			<tr>
+				<td>Bob</td>
+				<td>bob@bob.com</td>
+				<td>10000</td>
+				<td><a href="#">Delete</a></td>
+			</tr>
+		</table>
+
+		<div class="con">
+			<p>添加新员工</p>
+			<label>Name:<input type="text" name="" id="name-input"></label> <br />
+			<label>Email: <input type="text" name="" id="email-input"></label> <br />
+			<label>Salary:<input type="text" name="" id="salary-input"></label> <br />
+			<input type="submit" name="" id="submit-button" value="submit">
+		</div>
+	</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,348 @@
+		body {
+			height: 3000px;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+			
+		}
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: normal;
+		}
+		ul {
+			list-style: none;
+		}
+		.clearfix:before, .clearfix:after {
+			content: "";
+			display: table;
+		}
+		.clearfix:after {
+			clear: both;
+		}
+		.clearfix {
+			*zoom: 1;
+		}
+		a {
+			text-decoration: none;
+		}
+		input {
+			border: 0;
+			box-sizing: border-box;
+		}
+		
+		/*初始化结束*/
+		/*header开始*/
+		body {
+			background-color: #f3f5f7;  /* 整个页面的背景色 */
+		}
+		header {
+			height: 100px;
+			overflow: hidden;
+		}
+		.head {
+			width: 100%;
+			height: 42px; 
+			margin: 26px auto;
+		}
+		.logo{
+			float: left;
+		}
+		.navbar {
+			/*background-color: red;*/
+			float: left;
+			height: 42px;
+			line-height: 42px;
+			margin-left: 60px;
+		}
+		.navbar li {
+			float: left;
+		}
+		.navbar li a {
+			/*background-color: red;*/
+			padding: 0 10px 0;
+			line-height: 42px;
+			display: block;
+		}
+		.navbar li a:hover {
+			border-bottom: 2px solid #00a4ff;
+		}
+		/*搜索框部分开始*/
+		.search {
+			width: 410px;
+			height: 38px;
+			float: right;	
+			border:1px solid #00a4ff;
+		}
+		.search input[type=text] {
+			width: 360px;
+			height: 38px;
+			float: left;
+			padding-left: 18px;	
+		}
+		.search input[type=submit] {
+			width: 50px;
+			height: 38px;
+			float: left;
+			background:url(../images/search_06.png) no-repeat center center #00a4ff;
+		}
+		/*个人中心*/
+		.person {
+			float: right;
+			height: 42px;
+			line-height: 42px;
+			margin-left: 20px;
+		}
+		.person a {
+			float: left;
+			margin-right: 28px;
+		}
+		/*bannar部分*/
+		.bannar {
+			background-color: #033db2;
+			height: 418px;
+			
+		}
+		.bannar_in {
+			width: 1200px;
+			height: 418px;
+			margin: 0 auto;
+			background: url(../images/banner_03.png) no-repeat 0 0;
+			position: relative;
+		}
+		.active-pointer {
+			width: 164px;
+			height: 14px;
+			
+			position: absolute;
+			bottom: 34px;
+			left: 50%;
+			margin-left: -82px;
+		}
+		.active-pointer li {
+			float: left;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background-color: #64b6e6;
+			margin-right: 16px;
+		}
+		.active-pointer li:last-child {
+			margin-right: 0;
+		}
+		.active-pointer li:hover {
+			background-color: #fff;
+		}
+		.slidebar {
+			width: 190px;
+			height: 418px;
+			background-color: rgba(0,0,0,0.3);	
+			float: left;
+			overflow: hidden;
+		}
+		.slidebar li a{
+			font-size: 14px;
+			color: #fff;
+			padding-left: 20px;
+			margin-top: 30px;
+			display: block;
+		}
+		.slidebar li span{
+			padding-right: 20px;
+			float: right;
+		}
+		.slidebar li a:hover {
+			color: #00a4ff;
+		}
+
+		.timetable{
+			width: 228px;
+			height: 300px;
+			background-color: #fff;
+			float: right;
+			margin-top: 50px;
+		}
+		.timetable dt {
+			color: #fff;
+			font-size: 18px;
+			font-weight: bold;
+			height: 48px;
+			line-height: 48px;
+			padding-left: 65px;
+			background-color: #9bceea;
+			margin-bottom: 5px;
+		}
+		.timetable dd {
+			width: 191px;
+			/*height: 50px;*/
+			height: 60px;
+			margin: 0 auto;
+			border-bottom: 1px solid #efefef;
+			padding-top: 12px;
+			box-sizing: border-box;
+		}
+		.timetable dd:last-child {
+			border: 0;
+		}
+		.timetable dd h4 {
+			font-size: 16px;
+			font-weight: normal;
+			color: #5f5f5f;
+		}
+		.timetable dd p {
+			color: #bfbfbf;
+			font-size: 12px;
+		}
+		.timetable dd a {
+			width: 200px;
+			height: 38px;
+			display: block;
+			border: 1px solid #22b0ff;
+			background-color: #fff;
+			color: #00a4ff;
+			text-align: center;
+			line-height: 38px;
+			font-weight: bold;
+			font-size: 16px;
+		}
+		.timetable dd a:hover {
+			background-color: #22b0ff;
+			color: #fff;
+		}
+
+		/*recommend开始*/
+		.recommend {
+			width: 1200px;
+			height: 60px;
+			line-height: 60px;
+			margin: 8px auto 0;
+			box-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+		}
+		.recommend li {
+			float: left;
+		}
+		.recommend li:last-child {
+			float: right;
+		}
+		.recommend li a {
+			color: #000;
+			border-right: 1px solid #bfbfbf;
+			/*margin: 20px 0 0 32px;*/
+			margin-left: 30px;
+			padding-right: 30px;
+		}
+		.recommend li a:hover {
+			color: #00a4ff;
+		}
+		.recommend .recommend_fir a,.recommend .recommend_las a {
+			color: #00a4ff;
+		}
+		.recommend .recommend_las a {
+			border: 0;
+		}	
+
+		/*大课表*/
+		.recommend-cls {
+			width: 1200px;
+			margin: 35px auto 0;
+		}
+		.rec-head {
+			height: 40px;
+		}
+		.rec-head h4 {
+			float: left;
+			font-size: 20px;
+			color: #494949;
+		}
+		.rec-head a {
+			float: right;
+			font-size: 12px;
+			color: #e2e3e5;
+			padding-top: 5px;
+		}
+		.rec-cls li {
+			width: 228px;
+			height: 270px;	
+			background-color: #fff;
+			box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+			float: left;
+			margin: 0 15px 15px 0;
+		}
+		.rec-cls li:nth-child(5n) {
+			margin-right: 0;
+
+		}
+
+		.rec-cls li h4 {
+			height: 50px;
+			margin-top: 25px;
+			font-size: 14px;
+			font-weight: bold;
+			padding: 0 20px 0 22px;
+		}
+		.rec-cls li p {
+			height: 12px;
+			font-size: 12px;
+			padding: 0 20px 0 22px;
+		}
+		.rec-cls li p em {
+			color: #ff9159;
+			font-style: normal;
+		}
+		.rec-cls li p span {
+			color: #b0b0b0;
+		}
+		
+		/*底部*/
+		.footer {
+			width: 100%;
+			height: 274px;
+			background-color: #fff;
+		}
+		.footer-con {
+			width: 1200px;
+			margin: 0 auto;
+		}
+		.footer-con .con-l {
+			margin-top: 33px;
+			float: left;
+		}
+		.footer-con .con-l img {
+			width: 195px;
+			height: 42px;
+		}
+		.footer-con .con-l p {
+			height: 45px;
+			font-size: 12px;
+			color: #666;
+			margin-top: 25px;
+		}
+		.footer-con .con-l a {
+			display: inline-block;
+			width: 118px;
+			height: 33px;
+			border: 2px solid #00a4ff;
+			text-align: center;
+			line-height: 33px;
+			color:#00a4ff;
+		}
+		.con-r {
+			float: right;
+		}
+		.con-r dl {
+			float: left;
+			width: 224px;
+			margin-top: 35px;
+		}
+		.con-r dl:last-child {
+			width: 95px;
+		}
+		.con-r dl dt {
+			height: 32px;
+			font-size: 16px;
+			color: #6e6e6e;
+		}
+		.con-r dl dd {
+			height: 22px;
+			font-size: 12px;
+			color: #333;
+		}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+
+			// var timer = setTimeout(fun, time)  延时调用，只执行一次
+			// clearTimeout(timer)  关闭延时调用
+			var btn = document.getElementsByTagName('input')[0];
+
+			btn.onclick = function(){
+				var timer = setTimeout(function(){
+					alert('setTimeout');
+				}, 2000);
+				clearTimeout(timer);
+			};
+		}
+
+		
+
+
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="click">
+
+</body>
+</html>

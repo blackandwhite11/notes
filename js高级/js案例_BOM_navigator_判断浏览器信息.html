@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+			if(/chrome/i.test(window.navigator.userAgent)){
+				console.log('chrome');
+			}else if(/firefox/i.test(window.navigator.userAgent)){
+				console.log('firefox');
+			}else if('ActiveXObject' in window){
+				console.log('ie');
+			}
+
+
+		};
+	</script>
+</head>
+<body>
+
+</body>
+</html>

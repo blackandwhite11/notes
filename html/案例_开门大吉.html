@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>kaimengdaji</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		img {
+			display: block;
+			/*解决图片底层空白间隙问题  */
+		}
+		.con {
+			width: 440px;
+			height: 440px;
+			margin: 100px auto;
+			border: 2px solid #000;
+			position: relative;
+			perspective: 700px;
+		}
+		.door-l, .door-r {
+			width: 220px;
+			height: 440px;
+			background-color: #666;
+			position: absolute;
+			top: 0;
+			transition: all 2s;
+		}
+		.door-l {
+			left: 0;
+			border-right: 1px solid #000;
+			transform-origin: left;
+		}
+		.door-r {
+			right: 0;
+			border-left: 1px solid #000;
+			transform-origin: right;
+		}
+		.con:hover .door-l {
+			transform: rotateY(-120deg);]
+		}
+		.con:hover .door-r {
+			transform: rotateY(120deg);
+		}
+		.pointer-r, .pointer-l {
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: #fff;
+		}
+		.pointer-r {
+			right: 8px;
+		}
+		.pointer-l {
+			left: 8px;
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="con">
+		<img src="text_images/2.jpg" width="440px">
+		<div class="door-l"><div class="pointer-r"></div></div>
+		<div class="door-r"><div class="pointer-l"></div></div>
+	</div>
+
+</body>
+</html>

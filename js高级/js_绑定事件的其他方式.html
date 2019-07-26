@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var btn = document.getElementById("btn");
+
+			function bind(ele, event_name, fun){
+				// ele 需要绑定的元素  event_name 元素绑定的事件  fun 响应函数
+				if(ele.addEventListener){
+					return ele.addEventListener(event_name, fun, false);
+				}else{
+					return ele.attachEvent('on' + event_name, fun)
+				}
+			}
+
+			// btn.onclick = function(){
+			// 	alert('1');
+			// }
+			// btn.onclick = function(){
+			// 	alert('2');
+			// }
+
+			// ele.addEventListener(par1, par2, par3)  可以通过这个方法为元素绑定响应函数。
+			// 同时为一个元素的相同事件绑定多个响应函数 。 不支持ie8级以下
+			// 三个参数： 1、事件字符串，不要on  2、响应函数  3、是否在捕获阶段触发响应函数，一般传false
+
+
+			// ele.attachEvent(par1, par2) 同addEventListener() 但只有前2个参数，par1=事件字符串，要on
+			// 只支持IE8及以下
+
+			// btn.addEventListener('click', function(){
+			// 	alert('1');
+			// }, false);
+
+			// btn.addEventListener('click', function(){
+			// 	alert('2');
+			// }, false);
+
+			bind(btn, 'click', function(event){
+				alert('1');
+			});
+			bind(btn, 'click', function(event) {
+				alert('2');
+			});
+			
+
+		};
+	</script>
+</head>
+<body>
+	<input type="button" name="" id="btn" value="click">
+
+</body>
+</html>

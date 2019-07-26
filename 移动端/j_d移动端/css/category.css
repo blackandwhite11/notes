@@ -1,0 +1,142 @@
+/* 全屏 */
+.jd_category {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+
+}
+
+/* 顶部通栏 */
+.jd_topBar {
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid #ddd;
+    background: url(../images/header-bg.png);
+    background-size: 1px 44px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+.jd_topBar a{
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+}
+.jd_topBar a.icon_back{
+    left: 0;
+    background-position: -24px 0;
+    padding: 9px 14px;
+    background-origin: content-box;
+    background-clip: content-box;
+    
+}
+.jd_topBar a.icon_cate{
+    right: 0;
+    background-position: 0 -26px;
+    padding: 4px 8px;
+    background-origin: content-box;
+    background-clip: content-box;
+}
+.jd_topBar form{
+    width: 100%;
+    padding: 0 44px;
+}
+.jd_topBar form input{
+    width: 100%;
+    height: 30px;
+    margin-top: 7px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+/* 主体部分 */
+.jd_main {
+    width: 100%;
+    height: 100%;
+    padding-top: 45px;
+}
+/* 两栏自适应 */
+/* 左侧 */
+.cate_left {
+    width: 90px;
+    height: 100%;
+    float: left;
+}
+.cate_left ul{
+    width: 90px;
+}
+.cate_left ul li{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    background-color: #fdfdfd;
+}
+.cate_left ul li a{
+    display: block;
+    color: #000;
+}
+.cate_left ul li.now{
+    border-right: none;
+    background-color: #fff;
+}
+.cate_left ul li.now a{
+    color: red;
+}
+/* 右侧部分 */
+.cate_right {
+    overflow: hidden;
+    height: 100%;
+}
+
+.cate_right_box {
+    width: 100%;
+    padding: 0 12px;
+}
+.cate_right_box .ad_banner{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+}
+.cate_right_box .ad_banner img{
+    display: block;
+    width: 100%;
+}
+
+.cate_right_box .hot_category{
+    margin-top: 10px;
+    width: 100%;
+}
+.cate_right .cate_right_box .hot_category h3{
+    font-size: 12px;
+    color:#666;
+    font-weight: normal;
+}
+.cate_right .cate_right_box .hot_category ul{
+    width: 100%;
+    margin-top: 10px;
+}
+.cate_right .cate_right_box .hot_category ul li{
+    float: left;
+    width: 33.3333%;
+}
+.cate_right .cate_right_box .hot_category ul li a{
+    display: block;
+    width: 100%;
+}
+.cate_right .cate_right_box .hot_category ul li a img{
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+}
+.cate_right .cate_right_box .hot_category ul li a p{
+    font-size: 14px;
+    color: #ddd;
+    text-align: center;
+    margin: 5px 0;
+}

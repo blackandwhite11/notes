@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>轮番图</title>
+	<script type="text/javascript" src="js/res.js"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			var con = document.getElementById('con');
+			var con_ul = document.getElementById('con_ul');
+
+			var active_list = document.querySelectorAll('#active li');
+
+			// alert(active_list.length);
+
+			var img_list = document.getElementsByTagName('img');  
+			var img_size = 400;  // 每张图片的大小
+
+			var index = 0; // 表示当前显示的图片
+
+			var timer;  // 定义定时器返回参数存储变量
+
+			// 设置ul 的宽度为全部宽度之和
+			con_ul.style.width = img_list.length*img_size + 'px';
+
+			var index = 0  // 表示当前的图片的index
+
+			// 为ul li 绑定点击切换图片
+			for(var i = 0;i < active_list.length;i++){
+				// 为每一个li 定义一个属性，方便区分每一个li
+				active_list[i].num = i;
+
+				active_list[i].onclick = function(){
+					// alert(this.num);
+
+					clearInterval(timer);
+
+					index = this.num;
+					// 每次点击，切换图片
+					Move(con_ul, 'left', (-1)*img_size*index, 30, function(){});
+					
+
+					// 改变该li的背景
+					index = this.num;
+					changeBgc();
+
+					autoChange();
+				}
+			}
+			// 执行自动切换图片
+			autoChange();
+
+
+			// 自动切换图片
+			function autoChange(){
+				var time = 3000;  // 每张图片自动更换的时间间隔(ms)
+
+				timer = setInterval(function(){
+
+					index++;
+
+					index %= img_list.length;
+
+					console.log(index);
+
+					Move(con_ul, 'left', (-1)*img_size*index, 30, function(){
+						// 改变背景
+						changeBgc();
+					});
+				}, time);
+			}
+
+			// 改变背景
+			function changeBgc(){
+				// 判断图片是不是在最后一张
+				if(index >= img_list.length - 1){
+					index = 0;  // 最后一张图片的时候，显示的是第一张的active
+
+					// 此时显示的是最后一张图片，而最后一张图片和第一张一模一样，
+					con_ul.style.left = 0;  
+				}
+				for(var i=0;i < active_list.length;i++){
+						active_list[i].style.backgroundColor = 'blue';
+				}
+				active_list[index].style.backgroundColor = 'pink';   // index为全局变量， 表示当前显示的图片
+			}
+		};
+
+
+	</script>
+	<style type="text/css">
+		
+		* {
+			margin: 0;
+			padding: 0;
+		}	
+		ul {
+			list-style: none;
+		}
+
+		.con {
+			width: 400px;
+			height: 300px;
+			border: 2px solid #000;
+			margin: 50px auto;
+			background-color: pink;
+			overflow: hidden;
+			position: relative;
+		}
+
+		.con ul {
+			/*width: 2000px;*/
+			position: absolute;
+		}
+
+		.con ul li {
+			float: left;
+		}
+
+		#active {
+			position: absolute;
+			left: 150px;
+			bottom: 25px;
+		}
+
+		#active li{
+			float: left;
+			width: 15px;
+			height: 15px;
+			background-color: blue;
+			border-radius: 50%;
+			margin-right: 5px;
+		}
+
+		#active .active {
+			background-color: pink;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="con" id="con">
+		<ul id="con_ul">
+			<li><a href="#"><img src="images/图片1.png" alt=""></a></li>
+			<li><a href="#"><img src="images/图片2.png" alt=""></a></li>
+			<li><a href="#"><img src="images/图片3.png" alt=""></a></li>
+			<li><a href="#"><img src="images/图片4.png" alt=""></a></li>
+			<li><a href="#"><img src="images/图片5.png" alt=""></a></li>
+			<li><a href="#"><img src="images/图片1.png" alt=""></a></li>
+		</ul>
+
+		<ul id="active">
+			<li class="active"></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div>
+
+	
+
+
+</body>
+</html>

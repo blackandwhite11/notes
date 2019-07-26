@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		//Array 
+		// var arr = new Array();
+		// var arr = [];
+		var arr = [1, 3, 5, 3, 2, -1, -2, 6];
+		console.log('array:'+arr);
+
+		//arr.length  获取数组的长度
+		//console.log(arr.length);
+		//arr.push()  向尾部插入一个元素
+		//arr.push(10);
+
+		//arr.pop()  删除并返回最后一个元素
+		//console.log(arr.pop());
+
+		//arr.unshift() 开始添加一个元素
+		//arr.unshift(10);
+
+		//arr.shift() 删除第一个元素并返回
+		//console.log(arr.shift());
+
+		//arr.concat()  连接一个或多个数组并返回
+		//var arr2 = [1, 12, 123];
+		//console.log(arr.concat(arr2));
+
+		//arr.join(seq)  用分割符连接array并返回
+		//console.log(arr.join('+'));
+
+		//arr.reveser()  自身反转
+		//var a = arr.reverse();
+		//console.log(a);
+
+		//arr.splice(index, number)  删除并返回
+		//var a = arr.splice(1, 2);
+		//console.log(a);
+
+		//arr.slice(start, end) 选取指定元素
+		//var a = arr.slice(0,2);
+		//console.log(a);
+
+		//arr.sort()  自身排序 按Unicode编码排序
+		var a = arr.sort(function(a,b){
+			return a-b;
+		});
+
+		console.log(arr);
+
+		//案例:数组去重
+		// var arr = [1, 2, 4, 2, 3, 6, 7, 4, 3, 7, 8];
+		// var new_arr = [];
+		// var tag = 1;
+		// for(var i = 0;i<arr.length;i++){
+		// 	var tem = arr[i];
+		// 	for(var j = 0;j<new_arr.length;j++){
+		// 		if(tem==new_arr[j]){
+		// 			tag = 0;
+		// 			break;
+		// 		}
+		// 	}
+		// 	if(tag){
+		// 		new_arr.push(tem);
+		// 	}
+		// 	tag = 1;
+		// }
+		// console.log(arr);
+		// console.log(new_arr);
+
+		// var arr = [1, 2, 4, 2, 3, 6, 7, 4, 3, 7, 8];
+		// console.log(arr);
+		// for(var i=0;i<arr.length;i++){
+		// 	for(var j=0;j<i;j++){
+		// 		if(arr[i] == arr[j]){
+		// 			arr.splice(i,1);
+		// 			i--;
+		// 			break;
+		// 		}
+		// 	}
+		// }
+		// console.log(arr);
+		
+
+		
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>div 随鼠标移动</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var div1 = document.getElementById("div1");
+
+			// 当鼠标移动到div上面是，为div绑定事件，onmouseover
+			// div1.onmousemove = function(event){
+			document.onmousemove = function(event){
+				event = event || window.event;
+
+				// // 获取鼠标的坐标
+				// clientX clientY  用于获取当前滚动窗口的坐标
+
+				// var x = event.clientX;
+				// var y = event.clientY;
+
+				// 为解决有滚动条存在的问题
+				// pageX  pageY 可以获取鼠标相对于整个页面的坐标  ie8不支持
+				// var x = event.pageX;
+				// var y = event.pageY;
+
+				// 认为浏览器的滚动条是html的，可以通过documentElement.scrollTop获取
+				//console.log(document.documentElement.scrollTop);
+				var x = event.clientX + document.documentElement.scrollLeft;
+				var y = event.clientY + document.documentElement.scrollTop;
+				
+				//console.log(x + "---" + y);
+				// div1.offsetLeft = x + 'px';
+				// div1.offsetTop = y + 'px';  不行
+
+				div1.style.left = x + 'px';
+				div1.style.top = y + 'px';
+
+
+			};
+
+
+		};
+	</script>
+	<style type="text/css">
+		#div1 {
+			width: 80px;
+			height: 80px;
+			background-color: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body style="height: 2000px">
+	<div id="div1"></div>
+
+</body>
+</html>

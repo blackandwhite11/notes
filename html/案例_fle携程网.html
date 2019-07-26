@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>xc</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		.con {
+			width: 540px;
+			height: 1200px;
+			margin:0 auto;	
+		}
+		.header a {
+			height: 120px;
+			display: block;
+			margin-bottom: 3px;
+		}
+		.header a img {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+		.row {
+			width: 100%;
+			height: 150px;
+			margin-bottom: 3px;
+			border-radius: 8px;
+			display: flex;  
+			/*伸缩布局*/
+			background-color: #ff697a;
+			color: #fff;
+		}
+		.row2 {
+			background-color: #3d98ff;
+		}
+		.row3 {
+			background-color: #44c522;
+		}
+		.row4 {
+			background-color: #fc9720;
+		}
+
+		.row div {
+			flex: 1;
+			border-left: 1px solid #fff;
+		}
+		.row div:first-child {
+			border: 0;
+		}
+
+		.bar-l,.bar-r {
+			display: flex;
+			flex-direction: column;
+		}
+		.bar-l a, .bar-r a {
+			flex: 1;
+			border-bottom: 1px solid #fff;
+			text-align: center;	
+			line-height: 75px;
+		}
+		.bar-l a:last-child , .bar-r a:last-child {
+			border: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<!-- 盒子模型 -->
+	<div class="con">
+		<div class="header">
+			<a href="#"><img src="./text_images/header_1.png"></a>
+		</div>
+		<div class="row">
+			<div></div>
+			<div class="bar-l">
+				<a>海外酒店</a>    <!-- 用a 标签更适合，而不是div -->
+				<a>海外酒店</a>
+			</div>
+			<div class="bar-r">
+				<a>海外酒店</a>
+				<a>海外酒店</a>
+			</div>
+		</div>
+
+		<div class="row row2">
+			<div></div>
+			<div class="bar-l">
+				<a>海外酒店</a>
+				<a>海外酒店</a>
+			</div>
+			<div class="bar-r">
+				<a>海外酒店</a>
+				<a>海外酒店</a>
+			</div>
+			
+		</div>
+
+		<div class="row row3">
+			<div></div>
+			<div class="bar-l">
+				<a>海外酒店</a>
+				<a>海外酒店</a>
+			</div>
+			<div class="bar-r">
+				<a>海外酒店</a>
+				<a>海外酒店</a>
+			</div>
+			
+		</div>
+
+		<div class="row row4">
+			<div></div>
+			<div class="bar-l">
+				<a>海外酒店</a>
+				<a>海外酒店</a>
+			</div>
+			<div class="bar-r">
+				<a>海外酒店</a>
+				<a>海外酒店</a>
+			</div>
+			
+		</div>
+		
+	
+    
+
+
+	</div>
+
+
+
+</body>
+</html>

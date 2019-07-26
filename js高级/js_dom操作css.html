@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<style type="text/css">
+		.con {
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			background-color: #666;
+		}
+	</style>
+	<script type="text/javascript">
+		
+		window.onload = function(){
+			var div1 = document.getElementById('div1');
+
+			// ele.style.样式 = value  //设置读取内联样式
+			//div1.style.width = '200px';
+			//alert(div1.style.width);   //只能读取内联样式
+
+			// ele.currentStyle.样式   只读 只有IE支持
+			// div1.currentStyle.width = '200px';
+			//alert(div1.currentStyle.width);
+
+			// window.getComputedStyle(ele);  返回当前元素的对象，里面封装了当前元素对应的样式 不支持IE8及以下
+			//传2个参数，第一个：当前元素对象，第二个：可以传一个伪元素，但一般不传
+			//var div_obj = window.getComputedStyle(div1);
+			//alert(div_obj.width)
+
+			//alert(window.getComputedStyle);
+
+			//结合2种
+			// function getStyleObj(ele){
+			// 	if(window.getComputedStyle){
+			// 		return window.getComputedStyle(ele);
+			// 	}
+			// 	else{
+			// 		return ele.currentStyle;
+			// 	}
+			// }
+
+			function getStyle(ele_obj, style_name){
+				// ele_obj : 元素的对象
+				// style_name : 所需要获取的元素的属性名
+				if(window.getComputedStyle){
+					return window.getComputedStyle(ele_obj)[style_name];
+				}else{
+					return ele_obj.currentStyle[style_name];
+				}
+			}
+			// var obj = getStyleObj(div1);
+			// alert(getStyle(div1, 'width'));
+			// alert(getStyle(div1, 'backgroundColor'));
+
+
+
+
+		};
+	</script>
+
+</head>
+<body>
+	<div class="con" id="div1"></div>
+
+</body>
+</html>

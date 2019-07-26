@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		//基本数据类型：Number String Boolean Null Undefined 
+		//  基本数据类型保直接在栈内存中存储，值与值之间是独立存在的，修改一个变量的不会影响其他变量
+
+		//引用数据类型： Object  变量保存的是变量的地址
+		// 对象时保存到堆内存中的，没创建一个新的对象，就会在堆内存中开辟一个新的空间，
+		//而变量保存的是对象的引用（内存地址），如果2个变量保存的是同一个对象的引用，其中一个改变，另一个也会改变；
+
+		// var a = 11;
+		// var b = a;
+		// a = 15;
+		// console.log('a='+ a);
+		// console.log('b='+ b);
+
+		// var obj = new Object();
+		// obj.name = 'aaa';
+		// var obj2 = obj;
+		// obj.name = "xxx";
+
+		// console.log('obj='+ obj.name);
+		// console.log('obj2='+ obj2.name);
+
+		//添加属性： obj.属性名 = 值    或者  obj[‘属性名’] = 值
+		
+
+		// 对象
+		// var obj = new Object();
+		// obj.name = 'xiaoming';
+		// obj.age = 11;
+		// obj.fun = function (){
+		// 	console.log('hello')
+		// }
+		// var obj2 = {
+		// 	name:"sw",
+		// 	age:19,
+		// 	say_hi:function (){
+		// 		console.log('hi')
+		// 	}
+		// }
+		// console.log('-----obj---');
+		// console.log('obj--name ='+ obj.name);
+		// console.log('obj--age ='+ obj.age);
+		// obj.fun();
+
+		// console.log('-------obj2----');
+		// console.log('obj2--name ='+ obj2.name);
+		// console.log('obj2--age ='+ obj2.age);
+		// obj2.say_hi();
+
+		// var obj = {};	//这种方式存取更加灵活
+		// x = 'num';
+		// obj[ x] = '123'; 
+		// console.log(obj[x]);
+		// obj.age = 14;
+		// console.log(obj.age);
+		// delete obj.age;
+		// console.log(obj.age);
+
+		//检查一个对象中是否含有指定对象
+		// var obj = {};
+		// obj.age = 16;
+		// console.log('age' in obj);
+		// console.log('name' in obj);
+		// for(var i in obj){
+		// 	// 枚举对象中的属性
+		// 	console.log(i);
+		// }
+
+		
+
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

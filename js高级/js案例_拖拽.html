@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>拖拽</title>
+	<script type="text/javascript">
+		
+		window.onload = function(){
+			// 当鼠标按下的时候，触发事件
+			// 鼠标移动的时候，div随着鼠标移动
+			// 
+			var div1 = document.getElementById('div1');
+
+			div1.onmousedown = function(event){
+				// 当鼠标按下的时候
+				// alert('down');
+
+				 // 获取鼠标到box边沿的距离
+				 var mouse_box_top = event.clientY - div1.offsetTop;
+				 var mouse_box_left = event.clientX - div1.offsetLeft;
+
+				// 鼠标移动
+				document.onmousemove = function(event){
+					event = event || window.event;
+					// alert('down-move');
+					var x = event.clientX;
+					var y = event.clientY;
+
+					// div1.style.left = x + 'px';
+					// div1.style.top = y + 'px';
+
+					// 将div的top left 设置为鼠标移动的位置
+					div1.style.left = x - mouse_box_left + 'px';
+					div1.style.top = y - mouse_box_top + 'px';
+
+				};
+
+				// 鼠标松开
+				// div1.onmouseup = function(){    主要
+				document.onmouseup = function(){
+					// alert('up');
+					// 当鼠标松开时，document.onmousemove 事件取消
+
+					document.onmousemove = null;  // 取消onmousemove事件
+
+					document.onmouseup = null;  // 取消onmousemove事件, 
+					// 防止松开后，在box之外点击鼠标松开，再次触发onmouseup事件
+
+				};
+
+
+
+			};
+
+
+
+
+		};
+
+	</script>
+	<style type="text/css">
+		#div1 {
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body style="height: 2000px">
+	<div id="div1"></div>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		// 实现登录效果
+		// var account = prompt("输入用户账号:");
+		// var password = prompt("输入密码:");
+		// while(true){
+		// 	if(account=='123'&&password=='abc'){
+		// 		console.log('登录成功!');
+		// 		break;
+		// 	}
+		// 	else{
+		// 		account = prompt("输入用户账号:");
+		// 		password = prompt("输入密码:");
+		// 	}
+		// }
+
+
+
+		//判断一个数是不是素数(function)
+		// function is_sushu(num){
+		// 	for(var i=2;i<num;i++){
+		// 		if(num%i==0){
+		// 			return false;
+		// 		}
+		// 	}
+		// 	return true;
+		// }
+		// console.log(is_sushu(21));
+
+		//输入num，返回斐波那契数列的第num个  1 1 2 3 5 8 13 21 34
+		// function re_fbnq(n){
+		// 	var n1 = 1;
+		// 	var n2 = 1;
+		// 	var sum = 0;
+		// 	if(n == 1 || n == 2){
+		// 		return 1;
+		// 	}
+		// 	for(var i=1;i<n-1;i++){
+		// 		sum = n1 + n2;
+		// 		n1 = n2;
+		// 		n2 = sum;
+		// 	}
+		// 	return sum;
+		// }
+		// console.log(re_fbnq(9));
+
+		//反转数组
+		// function reverse_li(li) {
+		// 	for(var i=0;i<li.length/2;i++){
+		// 		var tem = li[i];
+		// 		li[i] = li[li.length-1-i];
+		// 		li[li.length-1-i] = tem;
+		// 	}
+		// 	return li;
+		// }
+		// var li = [1, 2, 3, 4, 5, 6, 7];
+		// console.log(reverse_li(li));
+
+
+		//应该是预解析的问题
+		// function f1(){
+		// 	console.log('haha');
+		// }
+		// f1();
+		// function f1(){
+		// 	console.log('dada');
+		// }
+		// f1();
+
+		//函数自调用, 更安全
+		// (function (){
+		// 	console.log('haha!');
+		// })();
+
+		//函数表达式 ---- var 变量名 = 匿名函数;
+		// var fun = function (){
+		// 	console.log('dada');
+		// };
+		// fun();
+
+		// js 没有块级作用域
+		// 全局变量： 用 var 定义的变量，在整个页面里都可以使用，不能被删除
+		// 局部变量： 函数里面定义的变量
+		// 隐式全局变量： 直接定义的变量， num = 0;  可以被删除
+		// var num = 10;
+		// delete num;
+		// n = 100;       // 隐式全局变量
+		// delete n;
+		// console.log(num);
+		// console.log(n);
+
+		// for(var i=0;i<3;i++){
+
+		// }
+		// console.log(i);
+
+
+		// 案例：代码如下： 
+		// var a = 123;
+		// function fun() {
+		// 	alert(a);
+		// 	a = 456;    //全局赋值
+		// }
+		// fun();  // 123
+		// alert(a);  //456
+
+		// var a = 123;
+		// function fun(a) {  //相当于定义了一个变量 （函数局部变量）
+		// 	alert(a);
+		// 	a = 456;
+		// }
+		// fun();   // undefined
+		// alert(a);  // 123
+
+		var a = 123;
+		function fun(a) {
+			alert(a);
+			a = 456;
+		}
+		fun(123); //123
+		alert(a); //123
+
+
+		
+
+
+
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>

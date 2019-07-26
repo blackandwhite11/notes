@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>animation</title>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		ul {
+			list-style: none;
+		}
+		
+		/*div {
+			width: 882px;
+			height: 86px;
+			margin: 100px auto;
+			border: 1px solid #666;
+			background-color: pink;
+			overflow: hidden;
+		}
+		ul {
+			width: 200%;
+		}*/
+		/*ul li {
+			float: left;
+			animation: gd 5s linear infinite;  }*/
+			/* linear 匀速  infinite无线循环*/
+		
+		/*@keyframes gd {
+			0% {
+				transform: translate(0,0);
+			}
+			100% {
+				transform: translate(-882px,0);
+			}
+		}
+		div:hover ul li{
+			animation-play-state: paused; } */
+			/*动画停止*/
+		
+		/*ul 滚动*/
+		div {
+			width: 882px;
+			height: 86px;
+			margin: 100px auto;
+			border: 1px solid pink;
+			overflow: hidden;
+		}
+		ul li {
+			float: left;
+		}
+		ul {
+			width: 200%;
+			animation: gd 4s linear infinite;
+		}
+		@keyframes gd {
+			0% {
+				transform: translate(0,0);
+			}
+			100% {
+				transform: translate(-882px,0);
+			}
+		}
+		div:hover ul {
+			animation-play-state: paused;
+		}
+
+		
+
+	</style>
+</head>
+<body>
+	
+	<div>
+		<ul>
+			<li><img src="text_images/nav1.jpg" alt=""></li>
+			<li><img src="text_images/nav2.jpg" alt=""></li>
+			<li><img src="text_images/nav3.jpg" alt=""></li>
+			<li><img src="text_images/nav4.jpg" alt=""></li>
+			<li><img src="text_images/nav5.jpg" alt=""></li>
+			<li><img src="text_images/nav6.jpg" alt=""></li>
+			<li><img src="text_images/nav7.jpg" alt=""></li>
+			<li><img src="text_images/nav1.jpg" alt=""></li>
+			<li><img src="text_images/nav2.jpg" alt=""></li>
+			<li><img src="text_images/nav3.jpg" alt=""></li>
+			<li><img src="text_images/nav4.jpg" alt=""></li>
+			<li><img src="text_images/nav5.jpg" alt=""></li>
+			<li><img src="text_images/nav6.jpg" alt=""></li>
+			<li><img src="text_images/nav7.jpg" alt=""></li>
+		</ul>
+
+		
+	</div>
+</body>
+</html>

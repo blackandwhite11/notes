@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>runing car</title>
+	<style type="text/css">
+		.con {
+			width: 100px;
+			height: 100px;	
+		}
+		.con img {
+			width: 100%;
+
+			animation: run 5s;
+		}
+		@keyframes run {
+			0% {
+				transform: translateX(0);
+			}
+			50% {
+				transform: translateX(500px);
+
+			}
+			51% {
+				
+				transform: translateX(500px) rotateY(180deg);
+			}
+			100% {
+				transform: translateX(0) rotateY(180deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<img src="text_images/car.jpg">
+	</div>
+
+</body>
+</html>

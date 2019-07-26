@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>navigator</title>
+	
+	<script type="text/javascript">
+		window.onload = function(){
+			console.log(window.navigator.userAgent);
+			//Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36
+			//Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:67.0) Gecko/20100101 Firefox/67.0
+			//Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; .NET4.0C; .NET4.0E; .NET CLR 2.0.50727; .NET CLR 3.0.30729; .NET CLR 3.5.30729; InfoPath.3; rv:11.0) like Gecko
+			
+			// window.navigator.userAgent
+			if(/chrome/i.test(window.navigator.userAgent)){
+				console.log('chrome');
+			}else if(/firefox/i.test(window.navigator.userAgent)){
+				console.log('firefox');
+			}else if('ActiveXObject' in window){
+				console.log('ie');
+			}
+
+			// 最好通过一些浏览器特有的对象来判断浏览器的信息
+			// 例如： ActiveXObject   ie特有的window的属性
+			// console.log(window.ActiveXObject);
+
+
+		};
+	</script>
+</head>
+<body>
+
+</body>
+</html>

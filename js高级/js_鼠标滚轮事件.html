@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+			var div1 = document.getElementById('div1');
+
+			// 鼠标滚动事件 onmousewheel 
+			// firefox 不支持该事件 ，它需要使用DOMMouseScroll来绑定滚动事件，但只能使用addEventListener()来绑定
+
+			// div1.addEventListener('DOMMouseScroll', function(){
+			// 	alert('gun');
+			// });
+
+			// alert('onmousewheel' in div1);
+
+			// div1.onmousewheel = function(){
+			// 	alert('wheel');
+			// };
+
+			// 鼠标滚动事件绑定
+			function BindMouseWheel(ele_obj, fun){
+				// ele_obj : 需要绑定滚动事件的元素的对象
+				// fun : 滚动事件的响应函数
+				if('onmousewheel' in ele_obj){
+					ele_obj.onmousewheel = fun;
+				}else{
+					ele_obj.addEventListener('DOMMouseScroll', fun);
+				}
+			};
+
+			// BindMouseWheel(div1, function(){
+			// 	alert('bindmousewheel');
+			// });
+
+
+			// 鼠标滚动时div的宽度随着变化
+
+
+
+		};
+
+	</script>
+	<style type="text/css">
+		#div1 {
+			width: 100px;
+			height: 100px;
+			background-color: #666;
+		}
+	</style>
+</head>
+<body>
+	<div id="div1"></div>
+</body>
+</html>

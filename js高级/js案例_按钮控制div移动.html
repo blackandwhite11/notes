@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+
+			// 按下按钮div移动到800px 的位置， 按下另一个按钮div回到0px的位置 只执行一次
+			// 
+			var div = document.getElementById('con');
+			var div2 = document.getElementById('div1')
+
+			// var timer;  
+			// 优化将timer变为obj的属性，各对象之间互不影响
+			var speed = 20;
+
+			var btn01 = document.getElementById('btn01');
+			btn01.onclick = function(){
+				// 按下按钮，div移动到800px
+				// alert('800px');
+
+				// clearInterval(timer);
+				// timer = setInterval(function(){
+				// 	// 开始div 的left值
+				// 	var start_left = div.offsetLeft;
+				// 	// 在原来基础上增加speed后的值
+				// 	var new_left = start_left + speed;
+				// 	if(new_left >= 800){
+				// 		new_left = 800;
+				// 	}
+				// 	div.style.left = new_left + "px";
+				// 	if (new_left == 800) {
+				// 		clearInterval(timer);
+				// 	}
+				// }, 50);
+
+				move(div, 'left', 800, 10, function(){
+					console.log('800px');
+				});
+			}
+
+			var btn02 = document.getElementById('btn02');
+			btn02.onclick = function(){
+				// 移动到0px
+				// alert('0px');
+
+				move(div, 'left', 0, 10);
+
+			}
+
+			var btn03 = document.getElementById('btn03');
+			btn03.onclick = function(){
+				move(div2, 'width', 800, 10, function(){});
+			}
+
+			function move(obj, attr, target, speed, callback){
+				// obj 需要移动的对象
+				// attr 表示obj变化的属性
+				// target 表示移动到什么位置
+				// speed 移动的速度  	
+				// callback 回调函数，动画执行完毕后执行
+
+				// 判断方向
+				// if(obj.offsetLeft > target){
+				// 	speed = -speed;  //  + 表示向右   - 表示向左
+				// }
+
+				var curr_style = parseInt(getStyle(obj, attr));
+				if(curr_style > target){
+					speed = -speed;
+				}
+
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function(){
+					// 到0px 条件 left <= 0px  speed < 0
+					// 到800px 条件 left >= 800px speed > 0
+					var old_value = parseInt(getStyle(obj, attr));  // 没有添加speed开始时的attr的长度
+
+					var new_value = old_value + speed;  // 
+					
+					obj.style[attr] = new_value + 'px';
+
+					if((speed < 0 && new_value <= target) || (speed > 0 && new_value >= target)){
+						// 判断new_value的长度有没有超出设置的长度，如果超出，直接设置为target(想要设置的长度)
+						obj.style[attr] = target + 'px';
+						clearInterval(obj.timer);
+						callback();
+					}
+				}, 50);
+			}
+
+			function getStyle(obj, attr){
+				// obj 对象
+				// attr 想要获取对象的属性
+				if(window.getComputedStyle){
+					return window.getComputedStyle(obj, null)[attr];
+				}else{
+					return obj.currentStyle[attr];
+				}
+			}
+		};
+
+	</script>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		#con {
+			width: 50px;
+			height: 50px;
+			background-color: pink;
+			position: absolute;
+			top: 50px;
+		}
+
+		#div1 {
+			width: 50px;
+			height: 50px;
+			background-color: blue;
+			position: absolute;
+			top: 200px;
+			
+		}
+
+	</style>
+</head>
+<body>
+	<input type="button" name="" value="800px" id="btn01">
+	<input type="button" name="" value="0px" id="btn02">
+
+	<input type="button" name="" value="box2-800px" id="btn03">
+	
+	<div id="con"></div>
+	<div id="div1"></div>
+	
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>location</title>
+	<script type="text/javascript">
+		window.onload = function(){
+			//location
+			// location.href  // 返回当前的URL
+
+			// location.reload()   //f5 刷新页面
+			// location.replace()  // 使用一个新页面替换当前页面，但不产生历史记录
+			// location.assign()  // 跳转到其他页面，产生历史记录，可以使用回退
+
+
+
+			// console.log(window.location.href);
+			var btn = document.getElementById('btn');
+			btn.onclick = function(){
+				// location.reload();
+				// location.replace('./js案例_div随方向键移动.html');
+				location.assign('./js案例_div随方向键移动.html');
+			}
+
+		};
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="转到" id="btn">
+</body>	
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		window.onload = function(){
+
+			// history.length  // 获取当次访问的链接数量
+
+			// history.back()  //回到上一个页面， 浏览器后退
+			// history.forward()  // 浏览器向前
+			// history.go()   // 跳转
+
+			var btn = document.getElementById('btn');
+			console.log(window.history.length);
+			btn.onclick = function(){
+
+				window.history.go('./js案例_div随鼠标移动.html');
+				console.log(window.history.length);
+			};
+
+
+		};
+		
+
+
+	</script>
+</head>
+<body>
+	<input type="button" name="" value="转到" id="btn">
+
+</body>
+</html>

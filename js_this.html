@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript">
+		
+		//this 解析器在调用函数时，都会向函数内部传递一个隐含参数--this
+		// 根据调用方式不同，this会指向不同的对象， 
+			//以函数的形式调用，this指向window
+			//以方法的形式调用，this会指向调用该方法的对象
+			//以构造函数的形式调用，this是指向的是新创建的那个对象
+			//使用call，apply调用时，this指向的是那个对象 
+			//(call,apply 在调用时可以将一个对象作为第一参数，此时这个对象会成为this)
+
+		// function fun(){
+		// 	console.log(this.name);
+		// }
+		// var obj = new Object();
+		// obj.name = 'obj---';
+		// obj.obj_fun = fun;
+
+		// var obj2 = new Object();
+		// obj2.name = 'obj2----';
+		// obj2.obj2_fun = fun;
+		// //window.fun();
+		// // fun();  //window
+		// obj.obj_fun();
+		// obj2.obj2_fun();
+
+		// function Person(name, age){
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.fun = function (){
+		// 		console.log(this);
+		// 	}
+		// }
+		// var per1 = new Person('xiaoming', 18);
+		// var per2 = new Person('xiaohuan', 20);
+
+		// per1.fun();
+		// per2.fun();
+
+		//函数的call apply方法 fun.call(obj, args1, args2...)  fun.apply(obj, [args1, args2...])
+		// function fun(){
+		//  	console.log(this);
+		// }
+		// var obj = new Object();
+		// obj.name = 'obj---';
+	
+		// var obj2 = new Object();
+		// obj2.name = 'obj2----';
+		
+		// fun();
+		// fun.call(obj2)
+
+
+		//工厂方法创建对象(很少使用)
+		// function createObject(args){
+		// 	var obj = new Object()
+
+		// 	return obj;
+		// }
+
+		//构造函数创建对象(重要)
+		//构造函数执行流程：1、立即创建一个新的对象
+		//2、将新建的对象设置为函数的this，可以使用this来引用新建的对象
+		//3、逐行执行函数中的代码 
+		//4、将新建的对象返回
+		// function Person(name, age){
+		// 	this.name = name; //以构造函数的形式调用，this是指向的是新创建的那个对象
+		// 	this.age = age;
+		// 	this.fun = function (){
+		// 		console.log(this.name);
+		// 	}
+		// }
+		// var per1 = new Person('xiaoming', 18);
+		// var obj = new Object();
+		// obj.name = 'su';
+		// console.log(per1); //Person {name: "xiaoming", age: 18, fun: ƒ}
+		// console.log(obj);  //{name: "su"}
+
+		//优化部分代码（构造函数创建对象)
+		// function fun(){
+		// 	console.log(this.name);
+		// }
+		// function Person(name, age){
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.fun = fun;
+		// 	// this.fun = function (){
+		// 	// 	console.log(this.name);
+		// 	// }
+		// }
+		// var per1 = new Person('xiaoming', 18);
+		// var per2 = new Person('xiaohuan', 20);
+		
+		// // per1.fun();
+		// // per2.fun();
+		// console.log(per1.fun == per2.fun);  //在创建的每个Person对象中都含fun函数
+		// //将函数定义在全局作用域，但污染了命名空间
+
+		//原型对象（prototype）
+		// 我们所创建的每个函数，解析器都会向函数里添加一个属性prototype
+		//当该函数以构造函数形式调用时，它所创建的对象都有一个隐含属性，可以通过__proto__来访问该属性。指向同一prototype。我们可以将对象共有的内容统一设置到原型对象中。
+		// function Person(name, age){
+		// 	this.name = name;
+		// 	this.age = age;
+		// 	this.__proto__.say = function() {
+		// 		console.log(this.name);
+		// 	}
+		// 	this.fun = function () {
+				
+		// 	}
+		// }
+		// var per1 = new Person('xiaoming', 18);
+		// var per2 = new Person('xiaohuan', 20);
+		//console.log(per1.__proto__);
+		//per1.say();
+		//console.log(per1.say == per2.say);
+		//console.log(per1.fun == per2.fun)
+		// console.log(per1 instanceof Person);
+		// console.log(per2 instanceof Person);
+		// console.log(per1 instanceof Object)
+
+		// instanceof : 检查一个对象是否是一个类的实例。
+		// 语法 ： 对象 instanceof 构造函数
+
+		//object.hasOwnProperty('属性名')  判断对象自身是否含有该属性，而非Prototype中的
+
+
+		// function Person( name, age, gender ){
+		// this.name = name;    //this 指定是新建的对象per
+		// this.age = age;
+		// this.gender = gender;
+		// this.__proto__.sayHello = function () {
+		//     alter( this.name );
+		// };
+		// this.__proto__.tall = '123';
+		// }
+		// Person.prototype.toString = function () {
+		//     //return "Person['name=' + this.name , 'age=' + this.age, 'gender=' + this.gender]";
+		// };   //修改原型中默认的toString函数
+		// var hong = new Person('hong', 18, 0);
+		// //console.log(hong.hasOwnProperty('tall'));
+		// console.log(hong.tall)
+
+
+
+
+
+
+
+		
+		
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
